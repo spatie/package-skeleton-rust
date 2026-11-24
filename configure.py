@@ -178,7 +178,7 @@ def main():
             continue
         rendered = TOKEN.sub(lambda match: values[match[1]], original)
         rendered = re.sub(
-            r"<!-- skeleton:start -->.*?<!-- skeleton:end -->\n?",
+            r"<!--delete-->.*?<!--/delete-->\n?",
             "",
             rendered,
             flags=re.DOTALL,

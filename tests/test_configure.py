@@ -43,6 +43,22 @@ class ConfigureTest(unittest.TestCase):
         }
 
     def test_configures_metadata_imports_docs_and_cleanup(self):
+        expected_headings = [
+            "Support us",
+            "Installation",
+            "Usage",
+            "Testing",
+            "Changelog",
+            "Contributing",
+            "Security Vulnerabilities",
+            "Credits",
+            "License",
+        ]
+        template_readme = (self.root / "README.md").read_text(encoding="utf-8")
+        self.assertEqual(
+            re.findall(r"^## (.+)$", template_readme, re.MULTILINE),
+            expected_headings,
+        )
         description = 'Work with "images" at C:\\photos: café'
         author = 'Zoë "Example"'
         result = self.configure(
@@ -88,24 +104,20 @@ class ConfigureTest(unittest.TestCase):
         for name in ("configure.py", "SKELETON.md", "tests/test_configure.py"):
             self.assertFalse((self.root / name).exists(), name)
         readme = (self.root / "README.md").read_text(encoding="utf-8")
-        self.assertNotIn("skeleton:start", readme)
+        self.assertNotIn("<!--delete-->", readme)
+        self.assertNotIn("<!--/delete-->", readme)
+        self.assertNotIn("python3 configure.py", readme)
+        self.assertIn(
+            "https://github.com/apollographql/skills/tree/main/skills/rust-best-practices",
+            readme,
+        )
         self.assertIn(
             "https://spatie.be/github-ad-image/spatie-photo-tools.jpg", readme
         )
         self.assertIn("https://spatie.be/github-ad-click/spatie-photo-tools", readme)
         self.assertEqual(
             re.findall(r"^## (.+)$", readme, re.MULTILINE),
-            [
-                "Support us",
-                "Installation",
-                "Usage",
-                "Testing",
-                "Changelog",
-                "Contributing",
-                "Security vulnerabilities",
-                "Credits",
-                "License",
-            ],
+            expected_headings,
         )
         self.assertTrue(readme.startswith("# spatie-photo-tools\n\n[![Latest version"))
         self.assertLess(readme.index("[![Total downloads]"), readme.index(description))

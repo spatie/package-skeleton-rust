@@ -5,12 +5,18 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/{{owner}}/{{repository}}/blob/main/LICENSE.md)
 [![Total downloads](https://img.shields.io/crates/d/{{crate_name}}.svg?style=flat-square)](https://crates.io/crates/{{crate_name}})
 
-<!-- skeleton:start -->
-## Create a package
+<!--delete-->
+---
+Use this template to create a Rust package:
 
-Use this template, then run `python3 configure.py` (Windows: `py -3 configure.py`). Requires Python 3.11+ for configuration and [Rust](https://rustup.rs/) 1.89+ for the library. The script asks for the crate name, GitHub repository, author and description, then replaces placeholders and removes itself. See [SKELETON.md](SKELETON.md) for template maintenance and non-interactive use.
+1. Press the "Use this template" button to create a new repository with this skeleton's contents.
+2. Run `python3 configure.py` (Windows: `py -3 configure.py`) to replace the placeholders and remove the template-only files.
+3. Have fun creating your package.
 
-<!-- skeleton:end -->
+Requires Python 3.11+ for configuration and [Rust](https://rustup.rs/) 1.89+ for the library. See [SKELETON.md](SKELETON.md) for template maintenance and non-interactive use.
+
+---
+<!--/delete-->
 {{description}}
 
 ## Support us
@@ -63,7 +69,9 @@ See [CHANGELOG.md](https://github.com/{{owner}}/{{repository}}/blob/main/CHANGEL
 
 See [CONTRIBUTING.md](https://github.com/{{owner}}/{{repository}}/blob/main/CONTRIBUTING.md) and the [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/).
 
-## Security vulnerabilities
+Using an AI coding agent? Load Apollo's [rust-best-practices skill](https://github.com/apollographql/skills/tree/main/skills/rust-best-practices) when writing or reviewing code in this package.
+
+## Security Vulnerabilities
 
 Report vulnerabilities privately using the instructions in [SECURITY.md](https://github.com/{{owner}}/{{repository}}/blob/main/SECURITY.md).
 
