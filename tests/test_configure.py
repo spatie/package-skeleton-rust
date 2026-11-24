@@ -112,9 +112,9 @@ class ConfigureTest(unittest.TestCase):
             readme,
         )
         self.assertIn(
-            "https://spatie.be/github-ad-image/spatie-photo-tools.jpg", readme
+            "https://spatie.be/github-ad-image/photo-tools-rust.jpg", readme
         )
-        self.assertIn("https://spatie.be/github-ad-click/spatie-photo-tools", readme)
+        self.assertIn("https://spatie.be/github-ad-click/photo-tools-rust", readme)
         self.assertEqual(
             re.findall(r"^## (.+)$", readme, re.MULTILINE),
             expected_headings,

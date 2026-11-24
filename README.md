@@ -21,7 +21,7 @@ Requires Python 3.11+ for configuration and [Rust](https://rustup.rs/) 1.89+ for
 
 ## Support us
 
-[<img src="https://spatie.be/github-ad-image/{{crate_name}}.jpg" alt="Support Spatie's open source work" width="419px" />](https://spatie.be/github-ad-click/{{crate_name}})
+[<img src="https://spatie.be/github-ad-image/{{repository}}.jpg" alt="Support Spatie's open source work" width="419px" />](https://spatie.be/github-ad-click/{{repository}})
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 

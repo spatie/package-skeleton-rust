@@ -27,7 +27,7 @@ python3 configure.py --defaults --crate-name spatie-example \
 
 Replace `greet` and its examples/tests. Edit Cargo keywords and categories. Set the package version as appropriate.
 
-The README ad image and click URL use the configured crate name. Arrange a matching ad image on spatie.be before publishing; unregistered names return 404.
+The README ad image and click URL use the configured repository name, such as `period-rust`. Arrange a matching ad image on spatie.be before publishing; unregistered names return 404.
 
 Follow the [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/checklist.html): snake_case functions, conventional conversions, documented public items, private fields, `Debug` on public types, and typed errors implementing `std::error::Error` when an API can fail. Add `# Errors`, `# Panics` and `# Safety` sections only where relevant. Do not add error types, builders or traits to an API that does not need them.
 
