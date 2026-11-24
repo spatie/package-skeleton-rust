@@ -12,6 +12,8 @@ python3 configure.py
 
 On Windows use `py -3 configure.py`. Author name and email default to Git configuration when available. Crate names and repository names are separate: `spatie-example` can live in `spatie/example-rust` and is imported as `spatie_example`.
 
+The package description also becomes the README H1, not the crate name. For a port, copy the PHP package's descriptive README title, adapting language-specific wording so it stays accurate. Use its GitHub description when the README title would make a false runtime claim.
+
 For automation:
 
 ```sh

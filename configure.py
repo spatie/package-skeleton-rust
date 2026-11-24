@@ -119,7 +119,7 @@ def main():
         ),
         (
             "description",
-            "Package description",
+            "Package description / README title (use the PHP package's description for a port)",
             "A Rust package by Spatie",
             text,
             "Enter a nonempty single-line description.",

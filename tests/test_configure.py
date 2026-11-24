@@ -119,9 +119,9 @@ class ConfigureTest(unittest.TestCase):
             re.findall(r"^## (.+)$", readme, re.MULTILINE),
             expected_headings,
         )
-        self.assertTrue(readme.startswith("# spatie-photo-tools\n\n[![Latest version"))
-        self.assertLess(readme.index("[![Total downloads]"), readme.index(description))
-        self.assertLess(readme.index(description), readme.index("## Support us"))
+        self.assertTrue(readme.startswith(f"# {description}\n\n[![Latest version"))
+        self.assertLess(readme.index("[![Total downloads]"), readme.rindex(description))
+        self.assertLess(readme.rindex(description), readme.index("## Support us"))
         for name, value in self.snapshot().items():
             self.assertNotRegex(value, rb"\{\{[a-z_]+\}\}", name)
 
