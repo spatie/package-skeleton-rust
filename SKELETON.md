@@ -1,6 +1,6 @@
 # Rust package skeleton
 
-This is the Rust equivalent of [spatie/package-skeleton-php](https://github.com/spatie/package-skeleton-php). It creates a standalone library with Cargo tooling and Spatie's documentation layout. No PHP runtime is needed. Python 3.11+ is needed only to configure the template; the resulting crate has no Python or third-party Rust dependencies.
+This template creates a standalone Rust library with Cargo tooling and Spatie's documentation layout. Python 3.11+ is needed only to configure the template; the resulting crate has no Python or third-party Rust dependencies.
 
 ## Configure a new package
 
@@ -25,7 +25,9 @@ python3 configure.py --defaults --crate-name spatie-example \
 
 ## Start the real library
 
-Replace `greet` and its examples/tests. Edit Cargo keywords and categories. Set the package version as appropriate. In `PARITY.md`, identify the PHP source revision and record differences, or explain that this is an original Rust library. The template does not claim a PHP counterpart exists.
+Replace `greet` and its examples/tests. Edit Cargo keywords and categories. Set the package version as appropriate.
+
+The README ad image and click URL use the configured crate name. Arrange a matching ad image on spatie.be before publishing; unregistered names return 404.
 
 Follow the [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/checklist.html): snake_case functions, conventional conversions, documented public items, private fields, `Debug` on public types, and typed errors implementing `std::error::Error` when an API can fail. Add `# Errors`, `# Panics` and `# Safety` sections only where relevant. Do not add error types, builders or traits to an API that does not need them.
 
@@ -33,7 +35,7 @@ Follow the [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/chec
 
 `docs/_index.md` declares `title: v1`, `githubUrl`, and `branch: main`. Other pages use `title` and `weight` frontmatter. This matches Spatie's Rust ports. Website registration and hosting are separate from creating the package.
 
-The crate includes README.md as its root rustdoc. build.rs discovers Markdown guides recursively, plus PARITY.md, and includes them in doctest-only modules. Use executable `rust` fences, assertions and rustdoc hidden `# ` lines for setup. Do not use `ignore` or `no_run` for examples that are supposed to execute. Hidden setup is hidden in rustdoc; the website renderer must also support rustdoc hidden lines before the guides are published there.
+The crate includes README.md as its root rustdoc. build.rs discovers Markdown guides recursively and includes them in doctest-only modules. Use executable `rust` fences, assertions and rustdoc hidden `# ` lines for setup. Do not use `ignore` or `no_run` for examples that are supposed to execute. Hidden setup is hidden in rustdoc; the website renderer must also support rustdoc hidden lines before the guides are published there.
 
 The docs and build script must stay in the Cargo package because downstream builds and doctests use them. `cargo package` in CI verifies that the distributed crate builds, not only the checkout.
 

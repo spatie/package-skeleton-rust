@@ -16,8 +16,7 @@ fn collect_pages(directory: &Path, pages: &mut Vec<std::path::PathBuf>) -> io::R
 
 fn main() -> io::Result<()> {
     println!("cargo:rerun-if-changed=docs");
-    println!("cargo:rerun-if-changed=PARITY.md");
-    let mut pages = vec!["PARITY.md".into()];
+    let mut pages = Vec::new();
     collect_pages(Path::new("docs"), &mut pages)?;
     pages.sort();
 

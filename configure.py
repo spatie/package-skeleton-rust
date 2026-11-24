@@ -194,9 +194,7 @@ def main():
     print(
         "\nConfigured. The configure script and template-only files have been removed."
     )
-    print(
-        "Review PARITY.md, Cargo keywords/categories, and the sample API before publishing."
-    )
+    print("Review Cargo keywords/categories and the sample API before publishing.")
     if args.no_check:
         print(
             "Checks skipped. Run cargo generate-lockfile, then the commands in docs/testing.md."

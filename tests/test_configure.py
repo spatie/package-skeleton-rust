@@ -1,6 +1,7 @@
 """Test configuration through its command-line interface, without requiring Cargo."""
 
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -86,7 +87,29 @@ class ConfigureTest(unittest.TestCase):
         )
         for name in ("configure.py", "SKELETON.md", "tests/test_configure.py"):
             self.assertFalse((self.root / name).exists(), name)
-        self.assertNotIn("skeleton:start", (self.root / "README.md").read_text())
+        readme = (self.root / "README.md").read_text(encoding="utf-8")
+        self.assertNotIn("skeleton:start", readme)
+        self.assertIn(
+            "https://spatie.be/github-ad-image/spatie-photo-tools.jpg", readme
+        )
+        self.assertIn("https://spatie.be/github-ad-click/spatie-photo-tools", readme)
+        self.assertEqual(
+            re.findall(r"^## (.+)$", readme, re.MULTILINE),
+            [
+                "Support us",
+                "Installation",
+                "Usage",
+                "Testing",
+                "Changelog",
+                "Contributing",
+                "Security vulnerabilities",
+                "Credits",
+                "License",
+            ],
+        )
+        self.assertTrue(readme.startswith("# spatie-photo-tools\n\n[![Latest version"))
+        self.assertLess(readme.index("[![Total downloads]"), readme.index(description))
+        self.assertLess(readme.index(description), readme.index("## Support us"))
         for name, value in self.snapshot().items():
             self.assertNotRegex(value, rb"\{\{[a-z_]+\}\}", name)
 
